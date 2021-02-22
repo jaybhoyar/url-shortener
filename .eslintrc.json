@@ -28,7 +28,6 @@
     "no-unused-vars": 0,
     "no-undef": 0,
     "indent": ["error", 2],
-    "arrow-parens": ["error", "as-needed"],
     "semi": ["error", "always"],
     "no-console": "off",
     "react/prop-types": 0,

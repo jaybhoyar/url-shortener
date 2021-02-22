@@ -1,44 +1,35 @@
-// import React, { useState } from "react";
+import React from "react";
 
-// import urlsApi from "apis/urls";
-// import Input from "components/Input";
-// import Button from "components/Button";
+import Button from "components/Button";
+import Input from "components/Input";
 
-// const CreateTask = ({ history }) => {
-//   const [originalLink, setOriginalLink] = useState("");
+const CreateTask = ({ originalLink, setOriginalLink, handleSubmit }) => {
+  return (
+    <div
+      className="flex items-center justify-center
+    px-4 py-6 lg:px-8 bg-gray-50 sm:px-6"
+    >
+      <div className="w-full max-w-md">
+        <h2
+          className="mt-6 text-3xl font-extrabold leading-9
+         text-center text-bb-gray-700"
+        >
+          New Url
+        </h2>
+        <form className="mt-8" onSubmit={handleSubmit}>
+          <Input
+            label="Url"
+            type="text"
+            placeholder="https://google.co.in"
+            value={originalLink}
+            onChange={(e) => setOriginalLink(e.target.value)}
+          />
 
-//   // const handleSubmit = async (event) => {
-//   //   event.preventDefault();
-//   //   try {
-//   //     await urlsApi.create({ task: { title, user_id: userId } });
-//   //     setLoading(false);
-//   //     history.push("/");
-//   //   } catch (error) {
-//   //     console.log(error);
-//   //   }
-//   // };
+          <Button type="submit" buttonText="Shorten Url" />
+        </form>
+      </div>
+    </div>
+  );
+};
 
-//   return (
-//     <div className="mt-6">
-//       <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
-//         <div className="mt-1 rounded-md shadow-sm">
-//           <input
-//             type={type}
-//             required={required}
-//             value={value}
-//             // onChange={(e) => {}}
-//             placeholder={placeholder}
-//             className="block w-full px-3 py-2 placeholder-gray-400
-//           transition duration-150 ease-in-out border
-//           border-gray-300 rounded-md appearance-none
-//           focus:outline-none focus:shadow-outline-blue
-//           focus:border-blue-300 sm:text-sm sm:leading-5"
-//           />
-//         </div>
-//         <Button type="submit" buttonText={"Shorten Link"} />
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default CreateTask;
+export default CreateTask;

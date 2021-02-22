@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import urlsApi from "apis/urls";
 
 import List from "components/Url/List";
+import CreateUrl from "components/Url/CreateUrl";
 
 const Dashboard = () => {
   const [urls, setUrls] = useState([]);
-  console.log("Hello");
+  const [originalLink, setOriginalLink] = useState("");
 
   const fetchUrls = async () => {
     try {
@@ -17,15 +18,33 @@ const Dashboard = () => {
     }
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await urlsApi.create({ url: { original_link: originalLink } });
+      setOriginalLink("");
+      fetchUrls();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     fetchUrls();
   }, []);
 
   return (
-    <span className="my-8 mx-8 ">
-      Dashboard
-      <List urls={urls} />
-    </span>
+    <div>
+      <CreateUrl
+        originalLink={originalLink}
+        setOriginalLink={setOriginalLink}
+        handleSubmit={handleSubmit}
+      />
+      <span className="my-8 mx-8 ">
+        Dashboard
+        <List urls={urls} />
+      </span>
+    </div>
   );
 };
 
