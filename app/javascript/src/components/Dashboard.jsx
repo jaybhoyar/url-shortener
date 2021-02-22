@@ -1,24 +1,32 @@
 import React, { useState, useEffect } from "react";
 import urlsApi from "apis/urls";
 
-const Dashboard = ({ history }) => {
-  const [urls, setUrls] = useState([]);
+import List from "components/Url/List";
 
-  // const fetchUrls = async () => {
-  //   try {
-  //     const response = await urlsApi.list();
-  //     setPendingTasks(response.data.tasks.pending);
-  //     setCompletedTasks(response.data.tasks.completed);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+const Dashboard = () => {
+  const [urls, setUrls] = useState([]);
+  console.log("Hello");
+
+  const fetchUrls = async () => {
+    try {
+      const response = await urlsApi.list();
+      console.log(response.data);
+      setUrls(response.data.urls);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    // fetchUrls();
+    fetchUrls();
   }, []);
 
-  return <p className="my-8 mx-8 ">Url list here</p>;
+  return (
+    <span className="my-8 mx-8 ">
+      Dashboard
+      <List urls={urls} />
+    </span>
+  );
 };
 
 export default Dashboard;

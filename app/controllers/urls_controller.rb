@@ -11,7 +11,7 @@ class UrlsController < ApplicationController
       render status: :ok, json: { notice: "Link shorten successfully" }
     else
       render status: :unprocessable_entity,
-             json: { errors: link.errors.full_messages.to_sentence }
+             json: { errors: link.errors.full_messages }
     end
   end
 
