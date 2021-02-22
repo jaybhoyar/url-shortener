@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  original_link: MyString
+  slug: MyString
+  click_count: 1
+  pinned: false
+
+two:
+  original_link: MyString
+  slug: MyString
+  click_count: 1
+  pinned: false
