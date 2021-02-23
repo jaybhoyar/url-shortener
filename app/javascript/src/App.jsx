@@ -5,15 +5,15 @@ import Dashboard from "components/Dashboard";
 import NavBar from "./components/NavBar";
 
 const App = () => {
-  useEffect(() => {
-    // API re
-  }, []);
+  // useEffect(() => {
+  //   // API re
+  // }, []);
 
   return (
     <Router>
       <NavBar />
       <Switch>
-        <Route exact path="/urls" component={Dashboard} />
+        <Route exact path="/" component={Dashboard} />
       </Switch>
     </Router>
   );
