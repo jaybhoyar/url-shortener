@@ -1,26 +1,11 @@
 import React, { useState, useEffect } from "react";
-import urlsApi from "apis/urls";
 
 import List from "components/Url/List";
 import CreateUrl from "components/Url/CreateUrl";
+import urlsApi from "apis/urls";
 
-const Dashboard = () => {
-  const [urls, setUrls] = useState([]);
+const Dashboard = ({ urls, fetchUrls }) => {
   const [originalLink, setOriginalLink] = useState("");
-
-  useEffect(() => {
-    fetchUrls();
-  }, []);
-
-  const fetchUrls = async () => {
-    try {
-      const response = await urlsApi.list();
-      console.log(response.data);
-      setUrls(response.data.urls);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();

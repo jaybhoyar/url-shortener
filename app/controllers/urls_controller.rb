@@ -1,4 +1,5 @@
 class UrlsController < ApplicationController
+  before_action :find_url, only: %i[show]
 
   def index
     urls = Url.all
@@ -15,9 +16,20 @@ class UrlsController < ApplicationController
     end
   end
 
+  def show
+    increment_click_count
+    redirect_to @url.original_link
+  end
+
   private
     def url_params
-      params.require(:url).permit(:original_link, :pinned)
+      params.require(:url).permit(:original_link, :pinned, :slug)
+    end
+
+    def find_url
+      @url = Url.find_by!(slug: params[:slug])
+      rescue ActiveRecord::RecordNotFound => errors
+      render json: {errors: errors}
     end
 
     def generate_slug
@@ -25,6 +37,10 @@ class UrlsController < ApplicationController
         new_slug = [*("a".."z"), *("0".."9")].shuffle[0, 6].join
         break new_slug unless Url.where(slug: new_slug).exists?
       end
+    end
+
+    def increment_click_count
+      @url.increment!(:click_count)
     end
 
 end
