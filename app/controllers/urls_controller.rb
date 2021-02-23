@@ -18,12 +18,12 @@ class UrlsController < ApplicationController
 
   def show
     increment_click_count
-    render status: :ok, json: {url: @url}
+    redirect_to @url.original_link
   end
 
   private
     def url_params
-      params.require(:url).permit(:original_link, :pinned)
+      params.require(:url).permit(:original_link, :pinned, :slug)
     end
 
     def find_url

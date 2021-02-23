@@ -1,6 +1,5 @@
 import React from "react";
-
-import Button from "components/Button";
+import { Link } from "react-router-dom";
 const List = ({ urls }) => {
   return (
     <section className="my-4 w-4/6 p-4 my-0 mx-auto">
@@ -49,7 +48,8 @@ const List = ({ urls }) => {
                     {url.original_link}
                   </a>
                   <a
-                    // onClick={() => handleClick(url)}
+                    href={window.location.href + url.slug}
+                    // onClick={() => handleClick(url.slug)}
                     className="p-4 hover:underline text-gray-800 break-all"
                     // disabled={loading}
                   >
