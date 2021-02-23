@@ -8,6 +8,10 @@ const Dashboard = () => {
   const [urls, setUrls] = useState([]);
   const [originalLink, setOriginalLink] = useState("");
 
+  useEffect(() => {
+    fetchUrls();
+  }, []);
+
   const fetchUrls = async () => {
     try {
       const response = await urlsApi.list();
@@ -28,10 +32,6 @@ const Dashboard = () => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    fetchUrls();
-  }, []);
 
   return (
     <div>
