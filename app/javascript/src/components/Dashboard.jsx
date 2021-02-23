@@ -25,7 +25,7 @@ const Dashboard = ({ urls, fetchUrls }) => {
         setOriginalLink={setOriginalLink}
         handleSubmit={handleSubmit}
       />
-      <List urls={urls} />
+      <List urls={urls} fetchUrls={fetchUrls} />
     </div>
   );
 };

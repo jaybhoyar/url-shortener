@@ -1,8 +1,8 @@
 class UrlsController < ApplicationController
-  before_action :find_url, only: %i[show]
+  before_action :find_url, only: %i[show update]
 
   def index
-    urls = Url.all
+    urls = Url.all.order("pinned DESC, updated_at DESC")
     render status: :ok, json: { urls: urls }
   end
 
@@ -19,6 +19,15 @@ class UrlsController < ApplicationController
   def show
     increment_click_count
     redirect_to @url.original_link
+  end
+
+  def update
+    if @url.toggle(:pinned).save
+      render status: :ok, json: { url: @url}
+    else
+      render status: :unprocessable_entity, json: { errors: @url.errors.full_messages }
+    end
+
   end
 
   private

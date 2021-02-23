@@ -1,6 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-const List = ({ urls }) => {
+import urlsApi from "apis/urls";
+
+const List = ({ urls, fetchUrls }) => {
+  const handleTogglePin = async (url) => {
+    try {
+      await urlsApi.update(url.slug, url.pinned);
+      fetchUrls();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <section className="my-4 w-4/6 p-4 my-0 mx-auto">
       <div>
@@ -17,7 +26,7 @@ const List = ({ urls }) => {
                     className={`${
                       url.pinned ? "text-purple-500" : "text-gray-600"
                     } p-4 bg-gray-100 hover:text-purple-400`}
-                    // onClick={() => handlePin(url)}
+                    onClick={() => handleTogglePin(url)}
                   >
                     <svg
                       width="16px"
@@ -43,15 +52,14 @@ const List = ({ urls }) => {
                   <a
                     className="p-4 hover:underline text-gray-800 break-all"
                     href={url.original_link}
-                    // target="_blank"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {url.original_link}
                   </a>
                   <a
                     href={window.location.href + url.slug}
-                    // onClick={() => handleClick(url.slug)}
                     className="p-4 hover:underline text-gray-800 break-all"
-                    // disabled={loading}
                   >
                     {window.location.href + url.slug}
                   </a>
