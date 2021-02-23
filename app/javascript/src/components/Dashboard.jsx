@@ -40,10 +40,7 @@ const Dashboard = () => {
         setOriginalLink={setOriginalLink}
         handleSubmit={handleSubmit}
       />
-      <span className="my-8 mx-8 ">
-        Dashboard
-        <List urls={urls} />
-      </span>
+      <List urls={urls} />
     </div>
   );
 };
