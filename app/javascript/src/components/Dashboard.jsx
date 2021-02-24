@@ -19,7 +19,8 @@ const Dashboard = ({ urls, fetchUrls }) => {
   };
 
   return (
-    <div className="bg-new-light-gray">
+    <div className="bg-new-light-gray min-h-screen">
+      
       <CreateUrl
         originalLink={originalLink}
         setOriginalLink={setOriginalLink}

@@ -5,24 +5,20 @@ import Input from "components/Input";
 
 const CreateTask = ({ originalLink, setOriginalLink, handleSubmit }) => {
   return (
-    <div
-      className="flex items-center justify-center
-    px-4 py-6 lg:px-8 bg-gray-50 sm:px-6"
-    >
-      <div className="w-full max-w-md">
-        
-        <form className="mt-8" onSubmit={handleSubmit}>
+    <div className="w-4/6 py-6 mx-auto">
+      <form onSubmit={handleSubmit}>
+        <div className="w-full flex shadow">
           <Input
             label="Url"
             type="text"
-            placeholder="https://google.co.in"
+            placeholder="Enter the long url here"
             value={originalLink}
             onChange={(e) => setOriginalLink(e.target.value)}
           />
 
-          <Button type="submit" buttonText="Shorten Url" />
-        </form>
-      </div>
+          <Button type="submit" buttonText="Shorten" />
+        </div>
+      </form>
     </div>
   );
 };

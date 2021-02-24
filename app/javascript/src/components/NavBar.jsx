@@ -7,7 +7,7 @@ const NavBar = () => {
         <div className="flex flex-row justify-between">
           <h1
             className="text-2xl font-extrabold leading-9
-                       text-center text-olive-green"
+                       text-center text-light-olive-green"
           >
             Short.ly
           </h1>

@@ -18,9 +18,9 @@ module.exports = {
         "nitro-gray-800": "#1F2937",
         "new-teal": "#296073",
         "new-light-teal": "#46b7db",
-        "new-light-gray": "#ededed",
-        "olive-green":"#79943d"
-
+        "new-light-gray": "#f0f0f0",
+        "light-olive-green": "#0ead7a",
+        "olive-green-hover": "#49bf99",
       },
       boxShadow: {
         "custom-box-shadow": "10px 10px 5px 200px rgba(0,0,0,1)",

@@ -9,30 +9,14 @@ const Input = ({
   required = true,
 }) => {
   return (
-    <div className="mt-6">
-      {label && (
-        <label
-          className="block text-sm font-medium
-              leading-5 text-bb-gray-700"
-        >
-          {label}
-        </label>
-      )}
-      <div className="mt-1 rounded-md shadow-sm">
-        <input
-          type={type}
-          required={required}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          className="block w-full px-3 py-2 placeholder-gray-400
-          transition duration-150 ease-in-out border
-          border-gray-300 rounded-md appearance-none
-          focus:outline-none focus:shadow-outline-blue
-          focus:border-blue-300 sm:text-sm sm:leading-5"
-        />
-      </div>
-    </div>
+    <input
+      type={type}
+      required={required}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      className="inline-flex outline-none bg-white border w-full py-3 px-4 text-gray-700 leading-tight focus:bg-white focus:border-light-olive-green"
+    />
   );
 };
 
