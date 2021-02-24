@@ -11,12 +11,12 @@ const List = ({ urls, fetchUrls }) => {
     }
   };
   return (
-    <section className="my-4 w-4/6 p-4 my-0 mx-auto">
+    <section className="my-2 w-4/6 mx-auto">
       <div>
         <ul className="border shadow-sm">
-          <li className="flex items-center justify-between bg-purple-600 mb-px p-4 text-white text-xl">
-            <p className="w-2/5 flex justify-center">Original</p>
-            <p className="w-2/5 flex justify-center">Short</p>
+          <li className="flex items-center justify-between bg-light-olive-green mb-px p-4 text-white text-xl">
+            <p className="w-2/5 flex justify-center font-semibold">Original</p>
+            <p className="w-2/5 flex justify-center font-semibold">Short</p>
           </li>
           {urls.map((url, index) => (
             <li key={index} className="bg-white mb-px">
@@ -24,8 +24,8 @@ const List = ({ urls, fetchUrls }) => {
                 <aside className="flex">
                   <a
                     className={`${
-                      url.pinned ? "text-purple-500" : "text-gray-600"
-                    } p-4 bg-gray-100 hover:text-purple-400`}
+                      url.pinned ? "text-light-olive-green" : "text-gray-600"
+                    } p-4 bg-gray-100 hover:text-olive-green-hover`}
                     onClick={() => handleTogglePin(url)}
                   >
                     <svg
@@ -50,7 +50,7 @@ const List = ({ urls, fetchUrls }) => {
                 </aside>
                 <div className="w-4/5 flex justify-between items-center">
                   <a
-                    className="p-4 hover:underline text-gray-800 break-all"
+                    className="w-3/5 cursor-pointer p-4 text-gray-500 hover:text-gray-800 break-all"
                     href={url.original_link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -58,14 +58,14 @@ const List = ({ urls, fetchUrls }) => {
                     {url.original_link}
                   </a>
                   <a
+                    className="w-2/5 cursor-pointer p-4 text-gray-900 hover:text-light-olive-green break-all"
                     href={window.location.href + url.slug}
-                    className="p-4 hover:underline text-gray-800 break-all"
                   >
                     {window.location.href + url.slug}
                   </a>
                 </div>
                 <aside className="flex items-center p-2">
-                  <span className="bg-purple-300 p-2 border border-purple-400 text-white text-xs font-bold rounded-r-lg">
+                  <span className="bg-green-400 px-2 py-1 border border-light-olive-green text-white font-bold">
                     {url.click_count ? url.click_count : 0}
                   </span>
                 </aside>

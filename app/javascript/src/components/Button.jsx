@@ -2,18 +2,14 @@ import React from "react";
 
 const Button = ({ type = "button", buttonText, onClick }) => {
   return (
-    <div className="mt-6">
-      <button
-        type={type}
-        onClick={onClick}
-        className="relative flex justify-center w-full px-4 py-2
-        text-sm font-medium leading-5 text-white transition duration-150
-         ease-in-out bg-bb-purple border border-transparent rounded-md
-         group hover:bg-opacity-90 focus:outline-none"
-      >
-        {buttonText}
-      </button>
-    </div>
+    <button
+      type={type}
+      onClick={onClick}
+      className="inline-flex bg-light-olive-green focus:shadow-outline
+        focus:outline-none text-black font-bold py-3 px-6 hover:bg-olive-green-hover"
+    >
+      {buttonText}
+    </button>
   );
 };
 

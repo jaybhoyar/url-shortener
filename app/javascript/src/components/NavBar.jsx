@@ -2,12 +2,15 @@ import React from "react";
 
 const NavBar = () => {
   return (
-    <div className="mx-auto bg-yellow-400 p-5">
-      <nav className="flex-row md:justify-between">
+    <div className="mx-auto bg-white p-4">
+      <nav className="w-4/6 my-0 mx-auto">
         <div className="flex flex-row justify-between">
-          <a href="#" className="font-semibold">
+          <h1
+            className="text-2xl font-extrabold leading-9
+                       text-center text-light-olive-green"
+          >
             Short.ly
-          </a>
+          </h1>
         </div>
       </nav>
     </div>
