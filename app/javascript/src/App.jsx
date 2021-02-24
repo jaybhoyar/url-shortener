@@ -9,6 +9,10 @@ import urlsApi from "apis/urls";
 const App = () => {
   const [urls, setUrls] = useState([]);
 
+  useEffect(() => {
+    fetchUrls();
+  }, []);
+
   const fetchUrls = async () => {
     try {
       const response = await urlsApi.list();
@@ -17,10 +21,6 @@ const App = () => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    fetchUrls();
-  }, []);
 
   return (
     <Router>

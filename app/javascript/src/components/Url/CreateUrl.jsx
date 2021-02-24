@@ -10,12 +10,7 @@ const CreateTask = ({ originalLink, setOriginalLink, handleSubmit }) => {
     px-4 py-6 lg:px-8 bg-gray-50 sm:px-6"
     >
       <div className="w-full max-w-md">
-        <h2
-          className="mt-6 text-3xl font-extrabold leading-9
-         text-center text-bb-gray-700"
-        >
-          New Url
-        </h2>
+        
         <form className="mt-8" onSubmit={handleSubmit}>
           <Input
             label="Url"
