@@ -15,7 +15,7 @@ const Input = ({
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className="inline-flex outline-none bg-white border w-full py-3 px-4 text-gray-700 leading-tight focus:bg-white focus:border-light-olive-green"
+      className="inline-flex outline-none bg-white border focus:border-light-olive-green w-full py-3 px-4 text-gray-700 leading-tight focus:bg-white"
     />
   );
 };
