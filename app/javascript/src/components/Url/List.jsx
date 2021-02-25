@@ -25,7 +25,7 @@ const List = ({ urls, fetchUrls }) => {
                   <a
                     className={`${
                       url.pinned ? "text-light-olive-green" : "text-gray-600"
-                    } p-4 bg-gray-100 hover:text-olive-green-hover`}
+                    } p-4 bg-gray-100 hover:text-olive-green-hover cursor-pointer`}
                     onClick={() => handleTogglePin(url)}
                   >
                     <svg

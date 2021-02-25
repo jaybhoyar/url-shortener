@@ -13,6 +13,8 @@ module.exports = {
         "bb-gray-700": "#37415",
         "bb-gray-600": "#4B5563",
         "bb-red": "#F56565",
+        "error-red":"#a11623",
+        "error-background": "#f8d7da",
         "bb-green": "#31C48D",
         "bb-yellow": "#F6B100",
         "nitro-gray-800": "#1F2937",
