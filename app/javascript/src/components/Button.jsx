@@ -5,7 +5,7 @@ const Button = ({ type = "button", buttonText, onClick }) => {
     <button
       type={type}
       onClick={onClick}
-      className="inline-flex bg-light-olive-green focus:shadow-outline
+      className="rounded-r-md inline-flex bg-light-olive-green focus:shadow-outline
         focus:outline-none text-black font-bold py-3 px-6 hover:bg-olive-green-hover"
     >
       {buttonText}

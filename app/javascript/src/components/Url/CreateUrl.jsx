@@ -7,7 +7,7 @@ const CreateTask = ({ originalLink, setOriginalLink, handleSubmit }) => {
   return (
     <div className="w-4/6 py-6 mx-auto">
       <form onSubmit={handleSubmit}>
-        <div className="w-full flex shadow">
+        <div className="w-full flex shadow rounded-l-md">
           <Input
             label="Url"
             type="text"
