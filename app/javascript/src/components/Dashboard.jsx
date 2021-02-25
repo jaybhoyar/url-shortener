@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 
+import urlsApi from "apis/urls";
 import List from "components/Url/List";
 import CreateUrl from "components/Url/CreateUrl";
-import urlsApi from "apis/urls";
+import Error from "components/Error";
 
 const Dashboard = () => {
   const [originalLink, setOriginalLink] = useState("");
   const [urls, setUrls] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -15,7 +17,8 @@ const Dashboard = () => {
       fetchUrls();
       setOriginalLink("");
     } catch (error) {
-      console.log(error);
+      setErrorMessage(error.response.data.errors);
+      setOriginalLink("");
     }
   };
 
@@ -24,7 +27,8 @@ const Dashboard = () => {
       const response = await urlsApi.list();
       setUrls(response.data.urls);
     } catch (error) {
-      console.log(error);
+      setErrorMessage(error.response.data.errors);
+      
     }
   };
   useEffect(() => {
@@ -37,7 +41,12 @@ const Dashboard = () => {
         originalLink={originalLink}
         setOriginalLink={setOriginalLink}
         handleSubmit={handleSubmit}
+        errorMessage={errorMessage}
       />
+      {errorMessage ? (
+        <Error errorMessage={errorMessage} setErrorMessage={setErrorMessage} />
+      ) : null}
+
       <List urls={urls} fetchUrls={fetchUrls} />
     </div>
   );
