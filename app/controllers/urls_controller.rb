@@ -12,7 +12,7 @@ class UrlsController < ApplicationController
     if url.save
       render status: :ok, json: { notice: "Link shorten successfully"}
     else
-      render status: :unprocessable_entity, json: { errors: url.errors.full_messages }
+      render status: :unprocessable_entity, json: { errors: "Invalid url input" }
     end
   end
 

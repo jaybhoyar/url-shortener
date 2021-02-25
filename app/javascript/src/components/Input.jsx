@@ -2,7 +2,6 @@ import React from "react";
 
 const Input = ({
   type = "text",
-  label,
   value,
   onChange,
   placeholder,
