@@ -4,9 +4,9 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs";
+import "../stylesheets/application.scss";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
-import "../stylesheets/application.scss";
 var ReactRailsUJS = require("react_ujs");
 var componentRequireContext = require.context("src", true);
 
